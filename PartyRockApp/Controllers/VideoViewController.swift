@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import WebKit
 
 class VideoViewController: UIViewController {
     
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var wkWebView: WKWebView!
     @IBOutlet weak var titleLabel: UILabel!
 
     private var mMediaItem: MediaHeader!
@@ -23,7 +24,7 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
 
         titleLabel.text = mediaItem.videoTitle
-        webView.loadHTMLString(mediaItem.videoURL, baseURL: nil)
+        wkWebView.loadHTMLString(mediaItem.videoURL, baseURL: nil)
     }
     
     @IBAction func onBackPressed(){
